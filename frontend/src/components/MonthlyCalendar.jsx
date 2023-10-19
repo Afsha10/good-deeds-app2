@@ -27,7 +27,7 @@ function MonthlyCalendar() {
         {/* displaying the month and year*/}
         <div className="flex justify-between px-6 ">
           <p className="font-semibold lg:text-xl">
-            {months[today.month()]}, {today.year()}
+            {months[today.month()]} {today.year()}
           </p>
           <div className="flex items-center gap-5">
             {/* Button showing previous month */}
