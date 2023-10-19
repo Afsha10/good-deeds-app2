@@ -12,7 +12,7 @@ function SessionStatusBox({
   const matchingSessions = sessions.filter(
     (session) => session.formatted_date === selectedDate.format("DD-MM-YYYY")
   );
-  console.log("selected date in Status box", selectedDate);
+ 
   return (
     <div className="px-8 sm:px-12 sm:p-4 bg-red-200 lg:text-lg">
       <p className="font-semibold py-2 pb-3">

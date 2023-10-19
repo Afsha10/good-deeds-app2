@@ -1,4 +1,4 @@
-plan for MonthlyDateBox:
+# plan for MonthlyDateBox:
 
 we are mapping through the dates and creating a date box for each date, we are passing in a date value. So each date box contains a reference to the date that we generated. Knowing that we can compare the date that is passed to our date box with dates from the sessions data
 
@@ -18,7 +18,7 @@ Knowledge:
 5. We also use a ternary operator with LightModeRoundedIcon that checks if existingMorningSessions is true and has volunteer_id then we have our icons gray if the existingMorningSessions is null then we have our icons coloured as they are available to book.
 
 
-Pseudocode for SessionsStatusBox:
+# Pseudocode for SessionsStatusBox:
 
 check selectedDate exists in the sessions data if it doesn't exist it gives us an empty array
 if it doesn't exist then we render "no sessions exist for this date"

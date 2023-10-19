@@ -7,10 +7,6 @@ export const generateDateForWeeklyCal = (todayDate) => {
 
   const arrayOfDatesForWeeklyCal = [];
 
-  console.log("date after 4 weeks from today -->", dateAfterFourWeeksFromToday);
-  console.log("lastDateOfCurrentMonth -->", lastDateOfCurrentMonth);
-  console.log("todayDate -->", todayDate);
-
   // generate prefix dates
 
   for (let i = 0; i < todayDate.day(); i++) {

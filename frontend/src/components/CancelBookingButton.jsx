@@ -3,7 +3,6 @@ import React from "react";
 
 function CancelBookingButton({ selectedSession, allSessions, setSessions }) {
   function handleClick() {
-    console.log("handleClick");
     const updatedSessions = allSessions.map((session) => {
       if (session.session_id === selectedSession.session_id) {
         session.volunteer_id = null;
