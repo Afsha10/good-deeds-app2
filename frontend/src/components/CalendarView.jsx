@@ -6,7 +6,7 @@ import CalendarViewingDropDown from "./CalendarViewingDropDown";
 function CalendarView() {
   const [calendarType, setCalendarType] = useState("monthly");
   return (
-    <div>
+    <div className="grow">
       <CalendarViewingDropDown
         calendarType={calendarType}
         setCalendarType={setCalendarType}

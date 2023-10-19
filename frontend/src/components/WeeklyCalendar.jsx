@@ -27,7 +27,7 @@ function WeeklyCalendar() {
   }, []);
 
   return (
-    <div className="flex flex-col lg:flex-row sm:mx-auto sm:mt-5 sm:gap-1 grow items-center lg:items-start lg:m-4 lg:p-2">
+    <div className="flex flex-col lg:flex-row sm:mx-auto sm:mt-5 sm:gap-1 items-center lg:items-start lg:m-4 lg:p-2">
       <div className="w-full py-2 lg:p-6  bg-blue-gray-50">
         <div className=" flex flex-row justify-between">
           {/* displaying the months and year */}
