@@ -1,5 +1,4 @@
 import React from "react";
-
 import capitalizeFirstLetter from "../utils/capitalizeFirstLetter.js";
 import ConfirmationDialogueBoxBest from "./ConfirmationDialogueBoxBest";
 
@@ -50,20 +49,4 @@ function SessionStatusBox({
 
 export default SessionStatusBox;
 
-// Pseudocode:
-// check selectedDate exists in the sessions data if it doesn't exist it gives us an empty array
-// if it doesn't exist then we render "no sessions exist for this date"
-// if the selectedDate exist in the sessions data  then give the info about the session status:
-// - if it a volunteer_id exist then say volunteer_name booked this session
-// - or else this session is available to book
 
-// <div>
-//     <p>Session Status...</p>
-//     <p>No sessions exist</p>
-//     <div>
-//         <p>Volunteer name has booked this session</p>
-//         <p>This session is available to book
-//             <ConfirmationDialogueBoxBest />
-//     </div>
-//     </p>
-// </div>

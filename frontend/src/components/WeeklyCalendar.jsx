@@ -74,7 +74,7 @@ function WeeklyCalendar() {
           })}
         </div>
         {/* rendering the dates in the weekly calendar */}
-        <div className="w-full grid grid-cols-7 px-8">
+        <div className="w-full grid grid-cols-7 px-8 lg:max-w-full">
           {generateDateForWeeklyCal().map(
             ({ date, currentMonth, nextMonth, today }, index) => {
               return (

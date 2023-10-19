@@ -64,7 +64,7 @@ function MonthlyCalendar() {
           })}
         </div>
         {/* generating date in the monthly calendar */}
-        <div className="w-full grid grid-cols-7 px-8">
+        <div className="w-full lg:max-w-full grid grid-cols-7 px-8">
           {generateDateForMonthlyCal(today.month(), today.year()).map(
             ({ date, currentMonth, today }, index) => {
               return (
