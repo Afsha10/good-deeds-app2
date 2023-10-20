@@ -25,10 +25,9 @@ function WeeklyDateBox({
   );
 
   return (
-    <div className="h-14 border grid place-content-center lg:h-24">
       <div
         className={conditionalClasses(
-          "h-14 w-11 hover:bg-black hover:text-white transition-all cursor-pointer border border-blue-gray-100 text-sm grid grid-cols-2 border-spacing-1 sm:border p-1 sm:h-16 sm:w-20 lg:h-24 lg:w-24 lg:text-lg lg:m-4",
+          "hover:bg-black hover:text-white transition-all cursor-pointer border border-blue-gray-100 text-sm grid grid-cols-2 border-spacing-1 sm:border p-1 w-full lg:text-lg lg:mx-4",
           date >= todayDay && date < endDate ? "" : "text-gray-400",
           date.isSame(todayDay, "day") ? "bg-red-400 text-white" : "",
           date.isSame(selectedDate, "day")
@@ -77,7 +76,6 @@ function WeeklyDateBox({
           </div>
         </div>
       </div>
-    </div>
   );
 }
 

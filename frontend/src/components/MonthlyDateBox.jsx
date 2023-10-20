@@ -24,57 +24,55 @@ function MonthlyDateBox({
   );
 
   return (
-    <div>
-      <div
-        key={index}
-        className={conditionalClasses(
-          "h-14 w-11 hover:bg-black hover:text-white transition-all cursor-pointer border border-blue-gray-100 text-sm grid grid-cols-2 border-spacing-1 sm:border p-1 sm:h-16 sm:w-20 lg:h-24 lg:w-24 lg:text-lg lg:p-1 lg:mx-4",
-          currentMonth ? "" : "text-gray-400",
-          today ? "bg-red-400 text-white" : "",
-          selectedDate.toDate().toDateString() === date.toDate().toDateString()
-            ? "bg-black text-white"
-            : ""
-        )}
-        onClick={() => {
-          setSelectedDate(date);
-        }}
-      >
-        <p>{date.date()}</p>
-        <div className="grid grid-col sm:p-2">
-          <div className={existingMorningSession ? "block" : "hidden"}>
-            {existingMorningSession?.volunteer_id ? (
-              <LightModeRoundedIcon
-                sx={{
-                  color: "gray",
-                }}
-                fontSize="string"
-              />
-            ) : (
-              <LightModeRoundedIcon
-                sx={{
-                  color: "orange",
-                }}
-                fontSize="small"
-              />
-            )}
-          </div>
-          <div className={existingEveningSession ? "block" : "hidden"}>
-            {existingEveningSession?.volunteer_id ? (
-              <NightlightRoundSharpIcon
-                sx={{
-                  color: "gray",
-                }}
-                fontSize="string"
-              />
-            ) : (
-              <NightlightRoundSharpIcon
-                sx={{
-                  color: "blue",
-                }}
-                fontSize="string"
-              />
-            )}
-          </div>
+    <div
+      key={index}
+      className={conditionalClasses(
+        "hover:bg-black hover:text-white transition-all cursor-pointer border border-blue-gray-100 text-sm grid grid-cols-2 border-spacing-1 sm:border p-1 w-full lg:text-lg lg:mx-4",
+        currentMonth ? "" : "text-gray-400",
+        today ? "bg-red-400 text-white" : "",
+        selectedDate.toDate().toDateString() === date.toDate().toDateString()
+          ? "bg-black text-white"
+          : ""
+      )}
+      onClick={() => {
+        setSelectedDate(date);
+      }}
+    >
+      <p>{date.date()}</p>
+      <div className="grid grid-col sm:p-2">
+        <div className={existingMorningSession ? "block" : "hidden"}>
+          {existingMorningSession?.volunteer_id ? (
+            <LightModeRoundedIcon
+              sx={{
+                color: "gray",
+              }}
+              fontSize="string"
+            />
+          ) : (
+            <LightModeRoundedIcon
+              sx={{
+                color: "orange",
+              }}
+              fontSize="small"
+            />
+          )}
+        </div>
+        <div className={existingEveningSession ? "block" : "hidden"}>
+          {existingEveningSession?.volunteer_id ? (
+            <NightlightRoundSharpIcon
+              sx={{
+                color: "gray",
+              }}
+              fontSize="string"
+            />
+          ) : (
+            <NightlightRoundSharpIcon
+              sx={{
+                color: "blue",
+              }}
+              fontSize="string"
+            />
+          )}
         </div>
       </div>
     </div>
