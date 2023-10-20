@@ -78,11 +78,11 @@ app.get("/bookings", (req, res) => {
 app.post("/bookings/create", (req, res) => {
   const volunteerId = req.body.volunteer_id;
   const sessionId = req.body.session_id;
-  return db
-    .query("INSERT INTO bookings (session_id, volunteer_id) VALUES ($1, $2)", [
-      sessionId,
-      volunteerId,
-    ])
+  db.query(
+    `INSERT INTO bookings (session_id, volunteer_id)
+              VALUES ($1, $2);`,
+    [sessionId, volunteerId]
+  )
     .then((result) => res.send(result.rows[0]))
     .catch((error) => {
       console.log(error.message);
@@ -90,5 +90,20 @@ app.post("/bookings/create", (req, res) => {
     });
 });
 
+// This endpoint is used to cancel an existing booking
+
+app.delete("/bookings/:id", (req, res) => {
+  const bookingId = Number(req.params.id);
+  db.query(
+    `DELETE FROM bookings 
+            WHERE id=$1;`,
+    [bookingId]
+  )
+    .then(() => res.send(`Booking with ID ${bookingId} is deleted`))
+    .catch((error) => {
+      console.log(error.message);
+      res.status(500).send("Database Error");
+    });
+});
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
