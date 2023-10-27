@@ -40,7 +40,8 @@ app.get("/sessions", (req, res) => {
        TO_CHAR(date, 'Day') AS day, s.id as session_id ,
        session_type, b.id AS booking_id, b.volunteer_id  AS volunteer_id,
        v.first_name AS volunteer_first_name, v.last_name as volunteer_last_name
-      FROM sessions s LEFT JOIN bookings b ON (s.id = b.session_id)
+      FROM sessions s 
+      LEFT JOIN bookings b ON (s.id = b.session_id)
       FULL OUTER JOIN volunteers v ON (b.volunteer_id = v.id)
       ORDER BY date, session_type desc;`
   )

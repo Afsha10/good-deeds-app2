@@ -14,8 +14,3 @@ User stories I have completed:
 - As a volunteer, I need to be able to see what sessions I have signed up for
 - As a volunteer, I need to be able to claim an available session
 - As a volunteer, I need to be able to cancel a session I have already signed up for
-
-User stories I would like to complete:
-
-- As a manager, I need to be able to see if any sessions don't have a volunteer signed up
-- As a manager, I need to be abel to see the name, email, and phone number of the person who signed up to any session
