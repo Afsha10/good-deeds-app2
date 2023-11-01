@@ -6,12 +6,13 @@
     "pg": "^8.11.3"
   },
   "scripts": {
+    "dev": "nodemon server.js",
     "start": "node server.js"
   },
   "name": "backend",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
+  "devDependencies": {"nodemon": "^3.0.1"},
   "keywords": [],
   "author": "",
   "license": "ISC",
