@@ -23,8 +23,9 @@ function MonthlyDateBox({
     (session) => session.session_type === "evening"
   );
 
+
   return (
-    <div
+    <button
       key={index}
       className={conditionalClasses(
         "hover:bg-black hover:text-white transition-all cursor-pointer border border-blue-gray-100 text-sm grid grid-cols-2 border-spacing-1 sm:border p-1 w-full lg:text-lg lg:mx-4",
@@ -34,6 +35,7 @@ function MonthlyDateBox({
           ? "bg-black text-white"
           : ""
       )}
+
       onClick={() => {
         setSelectedDate(date);
       }}
@@ -75,7 +77,7 @@ function MonthlyDateBox({
           )}
         </div>
       </div>
-    </div>
+    </button>
   );
 }
 
