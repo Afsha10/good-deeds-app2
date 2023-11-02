@@ -32,7 +32,7 @@ if the selectedDate exist in the sessions data  then give the info about the ses
     <div>
         <p>Volunteer name has booked this session</p>
         <p>This session is available to book
-            <ConfirmationDialogueBoxBest />
+            <ConfirmationDialogueBox />
     </div>
     </p>
 </div>

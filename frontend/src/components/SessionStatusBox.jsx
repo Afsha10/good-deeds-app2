@@ -1,6 +1,6 @@
 import React from "react";
 import capitalizeFirstLetter from "../utils/capitalizeFirstLetter.js";
-import ConfirmationDialogueBoxBest from "./ConfirmationDialogueBoxBest";
+import ConfirmationDialogueBoxMain from "./ConfirmationDialogueBox/DialogueBoxMain.jsx";
 
 function SessionStatusBox({
   selectedDate,
@@ -12,7 +12,7 @@ function SessionStatusBox({
   const matchingSessions = sessions.filter(
     (session) => session.formatted_date === selectedDate.format("DD-MM-YYYY")
   );
- 
+
   return (
     <div className="px-8 sm:px-12 sm:p-4 bg-red-200 lg:text-lg">
       <p className="font-semibold py-2 pb-3">
@@ -31,7 +31,8 @@ function SessionStatusBox({
                 <div>
                   {capitalizeFirstLetter(session.session_type)}- This session is
                   available to book
-                  <ConfirmationDialogueBoxBest
+                  <ConfirmationDialogueBoxMain
+                    selectedDate={selectedDate}
                     sessionId={session.session_id}
                     selectedVolunteer={selectedVolunteer}
                     setSelectedVolunteer={setSelectedVolunteer}
@@ -48,5 +49,3 @@ function SessionStatusBox({
 }
 
 export default SessionStatusBox;
-
-
