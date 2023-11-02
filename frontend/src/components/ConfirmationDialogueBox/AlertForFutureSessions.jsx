@@ -1,6 +1,6 @@
 import React, { Fragment, useRef } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import VolunteerDropDownBest from "../VolunteerDropDownBest";
+import VolunteerDropDown from "../VolunteerDropDown";
 
 function AlertForFutureSessions({
   sessions,
@@ -68,7 +68,7 @@ function AlertForFutureSessions({
                         Confirm your booking
                       </Dialog.Title>
                       <div className="mt-2">
-                        <VolunteerDropDownBest
+                        <VolunteerDropDown
                           selectedVolunteer={selectedVolunteer}
                           setSelectedVolunteer={setSelectedVolunteer}
                         />
