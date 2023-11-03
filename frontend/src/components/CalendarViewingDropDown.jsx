@@ -3,10 +3,11 @@ import { Listbox } from "@headlessui/react";
 function CalendarViewingDropdown({ calendarType, setCalendarType }) {
   return (
     <Listbox value={calendarType} onChange={setCalendarType}>
-      <Listbox.Button>
+      <Listbox.Button className="relative">
         <span className="text-white text-lg sm:text-xl">
           Select a Calendar View
         </span>
+        <span className="absolute pl-2">🔽</span>
       </Listbox.Button>
       <Listbox.Options>
         <Listbox.Option
