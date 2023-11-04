@@ -1,45 +1,26 @@
 export const generateDateForWeeklyCal = (todayDate) => {
   const numberOfWeeks = 4;
-  const firstDateOfCurrentMonth = todayDate.startOf("month");
-  const lastDateOfCurrentMonth = todayDate.endOf("month");
-  const firstDateOfNextMonth = firstDateOfCurrentMonth.add(1, "month");
-  const dateAfterFourWeeksFromToday = todayDate.add(numberOfWeeks, "week");
 
   const arrayOfDatesForWeeklyCal = [];
 
-  // generate prefix dates
+  // generate prefix dates (last Monday to yesterday)
 
-  for (let i = 0; i < todayDate.day(); i++) {
-    arrayOfDatesForWeeklyCal.push(todayDate.day(i));
+  for (let i = todayDate.day() - 1; i > 0; i--) {
+    arrayOfDatesForWeeklyCal.push(todayDate.subtract(i, "day"));
   }
 
-  // generate the upcoming dates from this month
+  // generate the dates of the next 4 weeks starting from today
 
-  for (let i = todayDate.date(); i <= lastDateOfCurrentMonth.date(); i++) {
-    arrayOfDatesForWeeklyCal.push(todayDate.date(i));
+  for (let i = 0; i < 7 * numberOfWeeks; i++) {
+    arrayOfDatesForWeeklyCal.push(todayDate.add(i, "day"));
   }
 
-  // generate the upcoming dates from next month
+  // generate suffix dates (dates from 4 weeks from today until the end of the last week)
 
-  for (
-    let i = firstDateOfNextMonth.date();
-    i < dateAfterFourWeeksFromToday.date();
-    i++
-  ) {
-    arrayOfDatesForWeeklyCal.push(firstDateOfNextMonth.date(i));
-  }
+  const lastDateAtWeek4 = arrayOfDatesForWeeklyCal.at(-1);
 
-  // generate suffix dates
-
-  const remainingDates =
-    numberOfWeeks + 1 * 7 - arrayOfDatesForWeeklyCal.length;
-
-  for (
-    let i = dateAfterFourWeeksFromToday.date();
-    i < dateAfterFourWeeksFromToday.date() + remainingDates;
-    i++
-  ) {
-    arrayOfDatesForWeeklyCal.push(dateAfterFourWeeksFromToday.date(i));
+  for (let i = 1; i <= 7 - lastDateAtWeek4.day(); i++) {
+    arrayOfDatesForWeeklyCal.push(lastDateAtWeek4.add(i, "day"));
   }
 
   return arrayOfDatesForWeeklyCal;
