@@ -14,7 +14,7 @@ function SessionStatusBox({
   );
 
   return (
-    <div className="px-8 sm:px-12 sm:p-4 bg-red-200 lg:text-lg">
+    <div className="px-8 sm:px-12 sm:p-4 bg-black lg:text-lg text-white">
       <p className="font-semibold py-2 pb-3">
         Sessions Status for {selectedDate.toDate().toDateString()}:
       </p>

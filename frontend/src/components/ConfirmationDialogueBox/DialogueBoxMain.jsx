@@ -18,7 +18,7 @@ export default function ConfirmationDialogueBox({
     <>
       <button
         type="button"
-        className="focus:outline-none text-white bg-gradient-to-tl from-light-blue-700 to-light-blue-900 hover:bg-cyan-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 m-1 sm:m-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+        className="text-white bg-gradient-to-tl from-orange-300 to-blue-900 hover:bg-cyan-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-7 py-2.5 m-1 sm:m-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
         onClick={() => setOpen(true)}
       >
         Book
