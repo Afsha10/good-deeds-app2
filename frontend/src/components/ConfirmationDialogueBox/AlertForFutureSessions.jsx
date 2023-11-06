@@ -1,6 +1,7 @@
 import React, { Fragment, useRef } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import VolunteerDropDown from "../VolunteerDropDown";
+import { baseUrl } from "../../config";
 
 function AlertForFutureSessions({
   sessions,
@@ -19,12 +20,41 @@ function AlertForFutureSessions({
         session.volunteer_id = selectedVolunteer.id;
         session.volunteer_first_name = selectedVolunteer.first_name;
         session.volunteer_last_name = selectedVolunteer.last_name;
+
+        const postNewBookingData = {
+          session_id: sessionId,
+          volunteer_id: selectedVolunteer.id,
+        };
+
+        fetch(`${baseUrl}/bookings/create`, {
+          method: "post",
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(postNewBookingData),
+        }).then((response) => console.log("response -->", response));
       }
+
+      //alert("You are booked for this session")
       return session;
     });
     setSessions(updatedSessions);
     setOpen(false);
   }
+
+  // {
+  //   session_id:
+  //   volunteerId:
+  // }
+
+  // function functionName() {
+  //   console.log("hello world")
+  // }
+
+  // const functionName = () => {
+  //   console.log("hello world")
+  // }
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -89,6 +119,8 @@ function AlertForFutureSessions({
                     type="button"
                     className="ml-3 inline-flex justify-center rounded-md bg-light-blue-800 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-800 sm:ml-3 sm:w-auto"
                     onClick={buttonClick}
+                    // onClick={handleConfirmPostButton}
+                    // onClick = {functionName}
                   >
                     Confirm
                   </button>
