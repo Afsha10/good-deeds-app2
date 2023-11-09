@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { generateDateForMonthlyCal, months } from "../utils/generateDateForMonthlyCal";
+import {
+  generateDateForMonthlyCal,
+  months,
+} from "../../utils/generateDateForMonthlyCal";
 import dayjs from "dayjs";
 import { GrFormNext, GrFormPrevious } from "react-icons/gr";
-import MonthlyDateBox from "./MonthlyDateBox";
-import BookingInfoContainer from "./BookingInfoContainer";
-import { baseUrl } from "../config";
+import MonthlyDateBox from "../MonthlyDateBox";
+import BookingInfoContainer from "../BookingInfoContainer";
+import { baseUrl } from "../../config";
+import "./monthlyCalendar.css";
 
 function MonthlyCalendar() {
   const days = ["S", "M", "T", "W", "T", "F", "S"];
@@ -20,6 +24,18 @@ function MonthlyCalendar() {
         setSessions(data);
       });
   }, []);
+
+  // if (!sessions.length) {
+  if (sessions.length === 0) {
+  return (
+    <div className="flex flex-col lg:flex-row sm:mx-auto sm:mt-5 sm:gap-1 items-center lg:items-start lg:mt-2 lg:p-2">
+      <div className="ring">
+        Loading
+        <span className="animation"></span>
+      </div>
+    </div>
+  );
+  }
 
   return (
     <div className="flex flex-col lg:flex-row sm:mx-auto sm:mt-5 sm:gap-1 items-center lg:items-start lg:mt-2 lg:p-2">

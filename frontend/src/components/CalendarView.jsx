@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import MonthlyCalendar from "./MonthlyCalendar";
+import MonthlyCalendar from "./monthlyCalendar/MonthlyCalendarMain";
 import WeeklyCalendar from "./WeeklyCalendar";
 import CalendarViewingDropDown from "./CalendarViewingDropDown";
 
