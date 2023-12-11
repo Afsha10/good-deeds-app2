@@ -3,7 +3,6 @@ const express = require("express");
 const { Pool } = require("pg");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-require("dotenv").config();
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -95,6 +94,7 @@ app.post("/bookings/create", (req, res) => {
 
 app.delete("/bookings/:id", (req, res) => {
   const bookingId = Number(req.params.id);
+  console.log("req->", req);
   db.query(
     `DELETE FROM bookings 
             WHERE id=$1;`,

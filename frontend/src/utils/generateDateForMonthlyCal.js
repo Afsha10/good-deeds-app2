@@ -5,7 +5,6 @@ export const generateDateForMonthlyCal = (
   year = dayjs().year()
 ) => {
   const firstDateOfMonth = dayjs().year(year).month(month).startOf("month");
-  console.log("firstdate", firstDateOfMonth);
   const lastDateOfMonth = dayjs().year(year).month(month).endOf("month");
   const arrayOfDate = [];
 
@@ -38,7 +37,6 @@ export const generateDateForMonthlyCal = (
   ) {
     arrayOfDate.push({ date: lastDateOfMonth.date(i), currentMonth: false });
   }
-  console.log("arraydate", arrayOfDate);
   return arrayOfDate;
 };
 
