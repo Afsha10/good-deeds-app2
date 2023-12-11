@@ -11,7 +11,7 @@ import { baseUrl } from "../../config";
 import "./monthlyCalendar.css";
 
 function MonthlyCalendar() {
-  const days = ["S", "M", "T", "W", "T", "F", "S"];
+  const days = ["M", "T", "W", "T", "F", "S", "S"];
   const currentDate = dayjs();
   const [today, setToday] = useState(currentDate);
   const [selectedDate, setSelectedDate] = useState(currentDate);
@@ -27,14 +27,14 @@ function MonthlyCalendar() {
 
   // if (!sessions.length) {
   if (sessions.length === 0) {
-  return (
-    <div className="flex flex-col lg:flex-row sm:mx-auto sm:mt-5 sm:gap-1 items-center lg:items-start lg:mt-2 lg:p-2">
-      <div className="ring">
-        Loading
-        <span className="animation"></span>
+    return (
+      <div className="flex flex-col lg:flex-row sm:mx-auto sm:mt-5 sm:gap-1 items-center lg:items-start lg:mt-2 lg:p-2">
+        <div className="ring">
+          Loading
+          <span className="animation"></span>
+        </div>
       </div>
-    </div>
-  );
+    );
   }
 
   return (

@@ -5,12 +5,13 @@ export const generateDateForMonthlyCal = (
   year = dayjs().year()
 ) => {
   const firstDateOfMonth = dayjs().year(year).month(month).startOf("month");
+  console.log("firstdate", firstDateOfMonth);
   const lastDateOfMonth = dayjs().year(year).month(month).endOf("month");
   const arrayOfDate = [];
 
   // create prefix date
 
-  for (let i = 0; i < firstDateOfMonth.day(); i++) {
+  for (let i = 1; i < firstDateOfMonth.day(); i++) {
     arrayOfDate.push({ currentMonth: false, date: firstDateOfMonth.day(i) });
   }
 
@@ -37,7 +38,7 @@ export const generateDateForMonthlyCal = (
   ) {
     arrayOfDate.push({ date: lastDateOfMonth.date(i), currentMonth: false });
   }
-
+  console.log("arraydate", arrayOfDate);
   return arrayOfDate;
 };
 

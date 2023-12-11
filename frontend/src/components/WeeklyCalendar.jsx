@@ -11,7 +11,7 @@ import { baseUrl } from "../config";
 
 function WeeklyCalendar() {
   const numberOfWeeks = 4;
-  const days = ["S", "M", "T", "W", "T", "F", "S"];
+  const days = ["M", "T", "W", "T", "F", "S", "S"];
   const todayDay = dayjs().startOf("day");
   const [todayDate, setTodayDate] = useState(todayDay);
   const [selectedDate, setSelectedDate] = useState(todayDay);

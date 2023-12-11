@@ -23,7 +23,6 @@ function MonthlyDateBox({
     (session) => session.session_type === "evening"
   );
 
-
   return (
     <button
       key={index}
@@ -35,7 +34,6 @@ function MonthlyDateBox({
           ? "bg-black text-white"
           : ""
       )}
-
       onClick={() => {
         setSelectedDate(date);
       }}
