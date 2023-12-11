@@ -11,7 +11,9 @@ function Header() {
           alt="Good deeds logo"
           className=" ml-6 h-16 sm:mx-7 sm:h-20 lg:h-24"
         />
-        <h1 className=" text-xl sm:text-4xl font-bold mx-3 mt-4 text-white">Volunteer Booking App</h1>
+        <h1 className="text-xl sm:text-4xl font-bold mx-3 mt-4 text-white">
+          Volunteer Booking App
+        </h1>
       </div>
       {/* <Navbar /> */}
     </header>
