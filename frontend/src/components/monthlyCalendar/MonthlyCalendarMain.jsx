@@ -30,7 +30,7 @@ function MonthlyCalendar() {
     return (
       <div className="flex flex-col lg:flex-row sm:mx-auto sm:mt-5 sm:gap-1 items-center lg:items-start lg:mt-2 lg:p-2">
         <div className="ring">
-          Loading
+          Loading soon 😊
           <span className="animation"></span>
         </div>
       </div>
