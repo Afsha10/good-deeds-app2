@@ -26,11 +26,9 @@ function MonthlyCalendar() {
   if (sessions.length === 0) {
     return (
       <div className="flex flex-col lg:flex-row sm:mx-auto sm:mt-5 sm:gap-1 items-center lg:items-start lg:mt-2 lg:p-2">
-        {" "}
         <div className="ring">
-          {" "}
-          Loading soon <span className="animation"></span>{" "}
-        </div>{" "}
+          Loading soon 😊<span className="animation"></span>
+        </div>
       </div>
     );
   }
@@ -39,46 +37,46 @@ function MonthlyCalendar() {
       <div className="w-full py-2 bg-blue-gray-50 lg:p-4">
         <div className="flex justify-between px-6 ">
           <div className="flex items-center gap-6">
-            {/* Button showing previous month */}{" "}
+            {/* Button showing previous month */}
             <GrFormPrevious
               className="w-5 h-5 cursor-pointer"
               onClick={() => setToday(today.month(today.month() - 1))}
-            />{" "}
-            {/* displaying the month and year*/}{" "}
+            />
+            {/* displaying the month and year*/}
             <p className="font-semibold lg:text-xl">
-              {months[today.month()]} {today.year()}{" "}
-            </p>{" "}
-            {/* Button showing next month */}{" "}
+              {months[today.month()]} {today.year()}
+            </p>
+            {/* Button showing next month */}
             <GrFormNext
               className="w-5 h-5 cursor-pointer"
               onClick={() => {
                 setToday(today.month(today.month() + 1));
               }}
-            />{" "}
+            />
           </div>
           <div className="m-4">
-            {/* button taking us to today */}{" "}
+            {/* button taking us to today */}
             <p
               className="cursor-pointer bg-red-400 p-2 text-white lg:text-xl"
               onClick={() => {
                 setToday(currentDate);
               }}
             >
-              Today{" "}
-            </p>{" "}
-          </div>{" "}
-        </div>{" "}
-        {/* getting the days */}{" "}
+              Today
+            </p>
+          </div>
+        </div>
+        {/* getting the days */}
         <div className="w-full grid grid-cols-7 text-gray-800 px-8 sm:px-8 lg:text-lg lg:my-1 lg:mx-4">
           {days.map((day, index) => {
             return (
               <p key={index} className="h-14 grid place-content-center text-sm">
-                {day}{" "}
+                {day}
               </p>
             );
-          })}{" "}
-        </div>{" "}
-        {/* generating date in the monthly calendar */}{" "}
+          })}
+        </div>
+        {/* generating date in the monthly calendar */}
         <div className="w-full lg:max-w-full grid grid-cols-7 px-8">
           {generateDateForMonthlyCal(today.month(), today.year()).map(
             ({ date, currentMonth, today }, index) => {
@@ -96,14 +94,14 @@ function MonthlyCalendar() {
                 />
               );
             }
-          )}{" "}
-        </div>{" "}
-      </div>{" "}
+          )}
+        </div>
+      </div>
       <BookingInfoContainer
         sessions={sessions}
         setSessions={setSessions}
         selectedDate={selectedDate}
-      />{" "}
+      />
     </div>
   );
 }
