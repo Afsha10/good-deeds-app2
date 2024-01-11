@@ -29,20 +29,28 @@ function WeeklyCalendar() {
   return (
     <div className="flex flex-col lg:flex-row sm:mx-auto sm:mt-5 sm:gap-1 items-center lg:items-start lg:m-4 lg:p-2">
       <div className="w-full py-2 lg:p-6  bg-blue-gray-50">
-        <div className=" flex flex-row justify-between">
+        <div className="flex justify-between px-2 sm:px-6">
           {/* displaying the months and year */}
-          <div className="flex px-6 font-semibold lg:text-xl">
-            <div>
-              {months[todayDate.month()]} {todayDate.year()} /{" "}
-              {months[endDate.month()]} {endDate.year()}
-            </div>
-          </div>
-          <div className="flex items-center gap-5">
+          <div className="flex items-center font-semibold lg:text-xl sm:gap-6">
             {/* Button showing previous month */}
             <GrFormPrevious
               className="w-5 h-5 cursor-pointer"
               onClick={() => setTodayDate(todayDate.subtract(4, "week"))}
             />
+            <div>
+              {months[todayDate.month()]} {todayDate.year()} /{" "}
+              {months[endDate.month()]} {endDate.year()}
+            </div>
+
+            {/* Button showing next month */}
+            <GrFormNext
+              className="w-5 h-5 cursor-pointer"
+              onClick={() => {
+                setTodayDate(todayDate.add(4, "week"));
+              }}
+            />
+          </div>
+          <div className="m-4">
             {/* button taking us to today */}
             <p
               className="cursor-pointer bg-red-400 p-2 text-white lg:text-xl"
@@ -52,13 +60,6 @@ function WeeklyCalendar() {
             >
               Today
             </p>
-            {/* Button showing next month */}
-            <GrFormNext
-              className="w-5 h-5 cursor-pointer"
-              onClick={() => {
-                setTodayDate(todayDate.add(4, "week"));
-              }}
-            />
           </div>
         </div>
 
